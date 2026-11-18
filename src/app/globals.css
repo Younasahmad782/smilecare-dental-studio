@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+  body { @apply bg-white font-sans text-ash-700 antialiased; }
+  h1, h2, h3 { @apply font-display text-navy-900; }
+  :focus-visible { outline: 3px solid #12a3ae; outline-offset: 3px; border-radius: 6px; }
+  ::selection { background: #cdeee8; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .section { @apply py-16 sm:py-24; }
+  .input { @apply min-h-12 w-full rounded-xl border border-ash-200 bg-white px-4 py-3 text-base text-navy-900 shadow-sm placeholder:text-ash-500 focus:border-teal-600; }
+  .input[aria-invalid="true"] { @apply border-red-600; }
+  .label { @apply mb-1.5 block text-sm font-semibold text-navy-900; }
+  .field-error { @apply mt-1.5 text-sm font-medium text-red-700; }
+}
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] > summary .chev { transform: rotate(180deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
